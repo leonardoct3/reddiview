@@ -1,21 +1,26 @@
-import React from 'react';
-import './App.css';
-// #ff006a
-import Posts from './components/Posts';
-import SearchBar from './components/SearchBar';
-import Subreddits from './components/Subreddits';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import { Posts } from './features/posts/Posts';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className='grid'>
-        <Subreddits />
-        <Posts />
-        <SearchBar />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <Header />
+              <div className="grid">
+                <Posts />
+                <SearchBar />
+              </div>
+            </div>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

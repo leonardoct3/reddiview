@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search } from '@phosphor-icons/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 
 const SearchBar = ({ onSearch }) => {
     const [query, setQuery] = useState('');
@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
                 placeholder="Search..." 
             />
             <button onClick={handleSearch}>
-                <Search 
+                <MagnifyingGlass 
                     size={16}
                 />
             </button>

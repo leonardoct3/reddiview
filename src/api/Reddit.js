@@ -1,4 +1,4 @@
-const clientId = '7OkLJeifEuZ0HeU4Qrviig'; // Replace with your client ID
+const clientId = 'EiP-mFSuH-1VZ_9E0A1O0g'; // Replace with your client ID
 const redirectUri = 'http://localhost:3000/';
 let accessToken;
 let expiresIn;
@@ -21,7 +21,7 @@ export const Reddit = {
             window.history.pushState('Access Token', null, '/');
             return accessToken;
         } else {
-            const accessUrl = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=read`;
+            const accessUrl = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&state=random_string&redirect_uri=${redirectUri}&duration=temporary&scope=read`;
             window.location = accessUrl;
         }
     },
@@ -43,6 +43,7 @@ export const Reddit = {
             }
 
             const jsonResponse = await response.json();
+            console.log(jsonResponse);
             return jsonResponse.data.children.map((child) => child.data);
         } catch (error) {
             console.error(`Error fetching posts: ${error}`);

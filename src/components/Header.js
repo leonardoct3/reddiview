@@ -1,11 +1,10 @@
 import React from 'react';
-import { RedditLogo } from '../assets/reddit-logo.png';
 import './Header.css';
-
+import { RedditLogo } from '@phosphor-icons/react';
 const Header = () => {
     return (
         <header>
-            <RedditLogo size={40} color='pink'/>
+            <img alt='' src={RedditLogo}></img>
             <h1>ReddiView</h1>
         </header>
     );
