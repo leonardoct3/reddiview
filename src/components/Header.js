@@ -4,8 +4,8 @@ import { RedditLogo } from '@phosphor-icons/react';
 const Header = () => {
     return (
         <header>
-            <img alt='' src={RedditLogo}></img>
-            <h1>ReddiView</h1>
+            <RedditLogo size={40} color='#ff0675'/>
+            <h1>reddiView</h1>
         </header>
     );
 };

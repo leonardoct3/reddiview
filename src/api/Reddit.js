@@ -43,8 +43,9 @@ export const Reddit = {
             }
 
             const jsonResponse = await response.json();
-            console.log(jsonResponse);
-            return jsonResponse.data.children.map((child) => child.data);
+            const { data } = jsonResponse;
+            const { children } = data;
+            return children.map((child) => child.data);
         } catch (error) {
             console.error(`Error fetching posts: ${error}`);
             return [];

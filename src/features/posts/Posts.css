@@ -1,3 +1,5 @@
 .posts-list {
     grid-column: 2 / span 3; /* Start at column 2 and span 3 columns */
+    color: black;
+    z-index: 1;
 }

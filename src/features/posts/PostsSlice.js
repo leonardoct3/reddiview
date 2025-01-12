@@ -5,7 +5,8 @@ export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
   async () => {
     const response = await Reddit.getPosts();
-    return response.data;
+    console.log(response);
+    return response;
   }
 );
 
