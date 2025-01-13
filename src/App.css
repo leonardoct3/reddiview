@@ -4,18 +4,46 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 10px;
     min-height: 100vh;
     color: white;
     font-size: calc(10px + 2vmin);
     width: 95%;
-    
 }
 
 .App {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (max-width: 1300px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .search-bar {
+        grid-column: 2 / span 1;
+        grid-row: 1;
+        margin-bottom: 20px;
+    }
+    .subreddits-list {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .subreddits-list {
+        grid-row: 2;
+    }
+    
+}
+
+/* Optional: Add some padding for smaller screens */
+@media (max-width: 600px) {
+    .grid {
+        grid-gap: 8px; /* Smaller gap on smaller screens */
+    }
 }
