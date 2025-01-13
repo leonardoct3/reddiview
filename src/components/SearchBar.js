@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
+import './SearchBar.css';
+import { useDispatch } from 'react-redux';
+import { setSearchTerm } from '../features/posts/postsSlice';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
     const [query, setQuery] = useState('');
+    const dispatch = useDispatch();
 
     const handleInputChange = (e) => {
         setQuery(e.target.value);
     };
 
     const handleSearch = () => {
-        onSearch(query);
+        dispatch(setSearchTerm(query));
     };
 
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    });
+
     return (
-        <div>
+        <div className='search-bar'>
             <input 
                 type="text" 
                 value={query} 

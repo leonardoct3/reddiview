@@ -4,7 +4,7 @@ import { Reddit } from '../../api/Reddit';
 export const fetchComments = createAsyncThunk(
   'comments/fetchComments',
   async (postId) => {
-    const response = await Reddit.getComments(postId);
+    const response = await Reddit.getArticleComments(postId);
     return response.data;
   }
 );
@@ -25,7 +25,10 @@ const commentsSlice = createSlice({
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
         state.loading = false;
-        state.comments = action.payload;
+        state.comments = {
+          ...state.comments,
+          [action.payload.postId]: action.payload.comments,
+        }
       })
       .addCase(fetchComments.rejected, (state, action) => {
         state.loading = false;
@@ -35,4 +38,4 @@ const commentsSlice = createSlice({
 });
 
 export default commentsSlice.reducer;
-export const selectComments = (state) => state.comments.comments;
+export const selectComments = (state, postId) => state.comments.comments[postId];

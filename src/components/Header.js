@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header>
             <RedditLogo size={40} color='#ff0675'/>
-            <h1>reddiView</h1>
+            <h1><span className='highlight'>reddi</span>View</h1>
         </header>
     );
 };

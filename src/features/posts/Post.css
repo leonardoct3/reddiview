@@ -1,0 +1,137 @@
+.reddit-post {
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    max-width: 650px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+    width: 100%;
+}
+
+.reddit-post:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    margin-bottom: 12px;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.post-info {
+    font-size: 14px;
+    color: #777;
+}
+
+.subreddit {
+    font-weight: bold;
+    color: #ff0375
+}
+
+.post-video {
+    margin: 16px 0;
+}
+
+.post-text {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+    gap: 30px;
+}
+
+.post-footer .post-link {
+    text-decoration: none;
+}
+
+.post-link {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 6px;
+    transition: color 0.2s;
+}
+
+.post-link:hover {
+    cursor: pointer;
+    color: #ff0375;
+}
+
+.post-footer .post-link:hover {
+    text-decoration: underline;
+}
+
+.comments {
+    margin-right: 16px;
+}
+
+.upvotes-container {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 6px;
+}
+
+.upvotes {
+    font-size: 12px;
+}
+
+.arrow {
+    transition: color 0.2s;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.up:hover {
+    color: #ff4500;
+}
+
+.down:hover {
+    color: #7193ff;
+}
+
+.comments-button-container {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    padding: 6px;
+    transition: color 0.2s;
+}
+
+.comments-button-container:hover {
+    cursor: pointer;
+    color: #ff0375;
+}

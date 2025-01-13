@@ -17,11 +17,11 @@ export const Reddit = {
             expiresIn = Number(expiresInMatch[1]);
 
             // Clear the token after it expires
-            window.setTimeout(() => (accessToken = ''), expiresIn * 1000);
+            window.setTimeout(() => (accessToken = ''), expiresIn * 10000);
             window.history.pushState('Access Token', null, '/');
             return accessToken;
         } else {
-            const accessUrl = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&state=random_string&redirect_uri=${redirectUri}&duration=temporary&scope=read`;
+            const accessUrl = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&state=random_string&redirect_uri=${redirectUri}&duration=temporary&scope=read+mysubreddits+vote`;
             window.location = accessUrl;
         }
     },
@@ -62,7 +62,7 @@ export const Reddit = {
                     Authorization: `Bearer ${accessToken}`,
                 },
             };
-            const response = await fetch('https://oauth.reddit.com/subreddits/mine/subscriber', config);
+            const response = await fetch('https://oauth.reddit.com/subreddits/mine/', config);
 
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
@@ -74,5 +74,29 @@ export const Reddit = {
             console.error(`Error fetching subreddits: ${error}`);
             return [];
         }
-    }
+    },
+    async getArticleComments(articleId) {
+        if (!accessToken) {
+            accessToken = this.getAccessToken();
+        }
+
+        try {
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            };
+            const response = await fetch(`https://oauth.reddit.com/comments/${articleId}`, config);
+
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+
+            const jsonResponse = await response.json();
+            return jsonResponse[1].data.children.map((child) => child.data);
+        } catch (error) {
+            console.error(`Error fetching comments: ${error}`);
+            return [];
+        }
+    },
 };

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import { Posts } from './features/posts/Posts';
 import SearchBar from './components/SearchBar';
+import { Subreddits } from './features/subreddits/Subreddits';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <div className="App">
               <Header />
               <div className="grid">
+                <Subreddits />
                 <Posts />
                 <SearchBar />
               </div>
