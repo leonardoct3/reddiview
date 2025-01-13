@@ -8,7 +8,7 @@ import {
 } from "@phosphor-icons/react";
 import { Comments } from "../comments/Comments";
 import { useDispatch } from "react-redux";
-import { fetchComments } from "../comments/PommentsSlice";
+import { fetchComments } from "../comments/CommentsSlice";
 import { vote } from "./PostsSlice";
 import { fetchPosts } from "./PostsSlice";
 
