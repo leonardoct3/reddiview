@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchComments, selectComments } from './commentsSlice';
+import { fetchComments, selectComments } from './CommentsSlice';
 import { Comment } from './Comment';
 import { SkeletonComment } from './SkeletonComment';
 

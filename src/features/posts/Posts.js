@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAllPosts } from "./postsSlice";
+import { selectAllPosts } from "./PostsSlice";
 import { Post } from "./Post";
 import { PostSkeleton } from "./PostSkeleton";
-import { fetchPosts } from "./postsSlice";
+import { fetchPosts } from "./PostsSlice";
 import './Posts.css';
 
 export const Posts = () => {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSubreddits, selectSubreddits, selectSubredditsLoading } from './subredditsSlice';
+import { fetchSubreddits, selectSubreddits, selectSubredditsLoading } from './SubredditsSlice';
 import { Subreddit } from './Subreddit';
 import { SubredditSkeleton } from './SubredditSkeleton';
 import styles from './subreddits.module.css';
 import RedditLogo from '../../assets/reddit-logo.png';
-import { setSubreddit } from '../posts/postsSlice';
+import { setSubreddit } from '../posts/PostsSlice';
 
 export const Subreddits = () => {
     const dispatch = useDispatch();

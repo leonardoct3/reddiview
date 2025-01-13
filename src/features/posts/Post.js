@@ -8,9 +8,9 @@ import {
 } from "@phosphor-icons/react";
 import { Comments } from "../comments/Comments";
 import { useDispatch } from "react-redux";
-import { fetchComments } from "../comments/commentsSlice";
-import { vote } from "./postsSlice";
-import { fetchPosts } from "./postsSlice";
+import { fetchComments } from "../comments/PommentsSlice";
+import { vote } from "./PostsSlice";
+import { fetchPosts } from "./PostsSlice";
 
 export const Post = ({ post }) => {
   const [showComments, setShowComments] = React.useState(false);

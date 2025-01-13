@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import './SearchBar.css';
 import { useDispatch } from 'react-redux';
-import { setSearchTerm } from '../features/posts/postsSlice';
+import { setSearchTerm } from '../features/posts/PostsSlice';
 
 const SearchBar = () => {
     const [query, setQuery] = useState('');
