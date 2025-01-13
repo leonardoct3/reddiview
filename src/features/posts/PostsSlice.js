@@ -9,6 +9,14 @@ export const fetchPosts = createAsyncThunk(
   }
 );
 
+export const vote = createAsyncThunk(
+  'posts/vote',
+  async (id, dir) => {
+    await Reddit.vote(id, dir);
+    return { id, dir };
+  }
+);
+
 const postsSlice = createSlice({
   name: 'posts',
   initialState: {
@@ -38,6 +46,16 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(vote.fulfilled, (state, action) => {
+        const post = state.posts.find((post) => post.id === action.payload.id);
+        post.likes = action.payload.dir;
+      })
+      .addCase(vote.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(vote.pending, (state) => {
+        state.status = 'loading';
       });
   },
 });

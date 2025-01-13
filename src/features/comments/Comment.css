@@ -1,0 +1,53 @@
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s;
+  }
+  
+  .comment:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .comment-author {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-flair {
+    background-color: rgb(255, 214, 221);
+    color: #ff0375;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .comment-upvotes {
+    color: #888;
+  }
+  
+  .comment-date {
+    margin-left: auto;
+    font-size: 12px;
+    color: #aaa;
+  }
+  
+  .comment-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+    white-space: pre-wrap;
+  }
+  

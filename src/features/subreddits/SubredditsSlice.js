@@ -5,7 +5,6 @@ export const fetchSubreddits = createAsyncThunk(
     'subreddits/fetchSubreddits',
     async () => {
         const response = await Reddit.getSubreddits();
-        console.log(response);
         return response;
     }
 );
@@ -37,3 +36,4 @@ const subredditsSlice = createSlice({
 
 export default subredditsSlice.reducer;
 export const selectSubreddits = (state) => state.subreddits.subreddits;
+export const selectSubredditsLoading = (state) => state.subreddits.loading;

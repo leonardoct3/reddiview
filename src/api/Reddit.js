@@ -99,4 +99,27 @@ export const Reddit = {
             return [];
         }
     },
+    async vote(articleId, voteType) {
+        if (!accessToken) {
+            accessToken = this.getAccessToken();
+        }
+
+        try {
+            const config = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `dir=${voteType}`,
+            };
+            const response = await fetch(`https://oauth.reddit.com/api/vote?id=${articleId}`, config);
+
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+        } catch (error) {
+            console.error(`Error voting: ${error}`);
+        }
+    },
 };

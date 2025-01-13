@@ -5,14 +5,15 @@ export const fetchComments = createAsyncThunk(
   'comments/fetchComments',
   async (postId) => {
     const response = await Reddit.getArticleComments(postId);
-    return response.data;
+    console.log(response);
+    return { postId, comments: response };
   }
 );
 
 const commentsSlice = createSlice({
   name: 'comments',
   initialState: {
-    comments: [],
+    comments: {},
     loading: false,
     error: null,
   },
