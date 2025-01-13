@@ -1,5 +1,5 @@
 const clientId = 'EiP-mFSuH-1VZ_9E0A1O0g'; // Replace with your client ID
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://reddiview.netlify.app/';
 let accessToken;
 let expiresIn;
 
